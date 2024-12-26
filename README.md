@@ -6,7 +6,7 @@ This version has been updated to use the current v3 build of Intervention/Image 
 
 It has been renamed to Nova5 Image Cropper to make it easier for Nova 5 users to find a tool to meet their image cropping needs.
 
-![screenshot of the advanced image field](https://raw.githubusercontent.com/marshmallow-packages/nova-advanced-image/master/screenshot.png)
+![screenshot of the advanced image field](https://raw.githubusercontent.com/UltraSimplified/nova5-image-cropper/master/screenshot.png)
 
 ## Requirements
 
