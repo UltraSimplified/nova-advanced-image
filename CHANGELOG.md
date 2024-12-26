@@ -1,5 +1,14 @@
 # Release Notes
 
+## [v1.2.0](https://github.com/ctessier/nova-advanced-image-field/compare/v1.0.2...v1.2.0)
+
+> Released 2024/12/26
+
+### Added
+
+- Minor updates to code for PHP 8.4 / Nova 5 compatibility
+- Update intervention/image to v.3.1
+
 ## [v1.1.0](https://github.com/ctessier/nova-advanced-image-field/compare/v1.0.2...v1.1.0)
 
 > Released 2020/06/07
