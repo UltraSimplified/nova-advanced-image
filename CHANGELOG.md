@@ -1,6 +1,6 @@
 # Release Notes
 
-## [v1.2.0](https://github.com/ctessier/nova-advanced-image-field/compare/v1.0.2...v1.2.0)
+## [v2.1.3](https://github.com/ultrasimplified/nova-advanced-image-field/compare/v2.1.2...v2.1.3)
 
 > Released 2024/12/26
 
