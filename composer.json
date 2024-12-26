@@ -1,5 +1,5 @@
 {
-  "name": "ultrasimplified/nova5-croppable-image",
+  "name": "ultrasimplified/nova5-image-cropper",
   "description": "An advanced image field for Nova with crop and resize.",
   "keywords": [
     "laravel",
