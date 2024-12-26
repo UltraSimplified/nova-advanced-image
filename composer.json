@@ -1,5 +1,5 @@
 {
-    "name": "marshmallow/nova-advanced-image",
+    "name": "ultrasimplified/nova-advanced-image",
     "description": "An advanced image field for Nova with crop and resize.",
     "keywords": [
         "laravel",
@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Marshmallow\\AdvancedImage\\FieldServiceProvider"
+                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider"
             ]
         }
     },
