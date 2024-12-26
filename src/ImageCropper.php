@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class AdvancedImage extends Image
+class ImageCropper extends Image
 {
     use TransformableImage;
 
@@ -59,7 +59,7 @@ class AdvancedImage extends Image
      *
      * @return void
      */
-    protected function fillAttribute(NovaRequest $request, $requestAttribute, $model, $attribute): array
+    protected function fillAttribute(NovaRequest $request, $requestAttribute, $model, $attribute): mixed
     {
         if (empty($request->{$requestAttribute})) {
             return false;
@@ -74,6 +74,8 @@ class AdvancedImage extends Image
         if ($previousFileName && !empty($previousFileName)) {
             Storage::disk($this->disk)->delete($previousFileName);
         }
+
+        return true;
     }
 
     public function setCustomCallback($customCallback)

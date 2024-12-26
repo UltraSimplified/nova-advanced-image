@@ -151,7 +151,7 @@ trait TransformableImage
             return;
         }
 
-        $this->image = Image::make($uploadedFile->getPathName());
+        $this->image = Image::read($uploadedFile->getPathName());
 
         if ($this->autoOrientate) {
             $this->orientateImage();
@@ -171,7 +171,7 @@ trait TransformableImage
         }
 
         $this->image->save(null, null, $clientExtension);
-        $this->image->destroy();
+        unset($this->image);
     }
 
     /**
@@ -199,13 +199,4 @@ trait TransformableImage
         });
     }
 
-    /**
-     * Orientate the image based on it's EXIF data.
-     *
-     * @return void
-     */
-    private function orientateImage()
-    {
-        $this->image->orientate();
-    }
 }
