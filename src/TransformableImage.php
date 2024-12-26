@@ -1,6 +1,6 @@
 <?php
 
-namespace Marshmallow\AdvancedImage;
+namespace Ultrasimplified\AdvancedImage;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\UploadedFile;
