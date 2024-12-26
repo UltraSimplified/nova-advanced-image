@@ -4,7 +4,7 @@ namespace Ultrasimplified\AdvancedImage;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\UploadedFile;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Laravel\Facades\Image;
 
 trait TransformableImage
 {
