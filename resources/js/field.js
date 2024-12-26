@@ -3,7 +3,7 @@ import DetailField from "@/components/DetailField";
 import FormField from "@/components/FormField";
 
 Nova.booting((Vue) => {
-    Vue.component("index-advanced-image", IndexField);
-    Vue.component("detail-advanced-image", DetailField);
-    Vue.component("form-advanced-image", FormField);
+  Vue.component("index-image-cropper", IndexField);
+  Vue.component("detail-image-cropper", DetailField);
+  Vue.component("form-image-cropper", FormField);
 });

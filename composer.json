@@ -1,45 +1,46 @@
 {
-    "name": "ultrasimplified/nova-advanced-image",
-    "description": "An advanced image field for Nova with crop and resize.",
-    "keywords": [
-        "laravel",
-        "nova",
-        "image",
-        "crop",
-        "resize",
-        "image crop",
-        "image resize",
-        "advanced",
-        "advanced image",
-        "advanced image field"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^8.0",
-        "intervention/image-laravel": "^1.3",
-        "laravel/nova": "^5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Ultrasimplified\\AdvancedImage\\": "src/"
-        }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        }
-    ],
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "ultrasimplified/nova5-croppable-image",
+  "description": "An advanced image field for Nova with crop and resize.",
+  "keywords": [
+    "laravel",
+    "nova",
+    "nova5",
+    "image",
+    "crop",
+    "resize",
+    "image crop",
+    "image resize",
+    "advanced",
+    "advanced image",
+    "advanced image field"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "intervention/image-laravel": "^1.3",
+    "laravel/nova": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ultrasimplified\\ImageCropper\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ultrasimplified\\ImageCropper\\FieldServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

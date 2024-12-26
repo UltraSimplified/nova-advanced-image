@@ -1,6 +1,6 @@
 <?php
 
-namespace Ultrasimplified\AdvancedImage;
+namespace Ultrasimplified\ImageCropper;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
