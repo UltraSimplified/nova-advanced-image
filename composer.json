@@ -16,7 +16,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "intervention/image": "^3.0",
+        "intervention/image-laravel": "^1.3",
         "laravel/nova": "^5.0"
     },
     "autoload": {
@@ -33,7 +33,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider"
+                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider",
+                "Intervention\\Image-laravel\\ServiceProvider",                
             ]
         }
     },
