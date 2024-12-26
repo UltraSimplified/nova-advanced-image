@@ -1,6 +1,6 @@
 <?php
 
-namespace Marshmallow\AdvancedImage;
+namespace Ultrasimplified\AdvancedImage;
 
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\Image;
