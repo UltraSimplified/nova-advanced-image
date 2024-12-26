@@ -33,8 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider",
-                "Intervention\\Image-laravel\\ServiceProvider"             
+                "Ultrasimplified\\AdvancedImage\\FieldServiceProvider"
             ]
         }
     },
