@@ -53,6 +53,10 @@ trait TransformableImage
      */
     private $autoOrientate = false;
 
+    private $outputFormat = null;
+
+    private $quality = 100;
+
     /**
      * The Intervention Image instance.
      *
@@ -76,6 +80,28 @@ trait TransformableImage
         }
 
         $this->driver = $driver;
+
+        return $this;
+    }
+
+    /**
+     * Specify the desired output image format.
+     * This method sets the output format to be used by Intervention.
+     *
+     * @throws \Exception
+     *
+     * @return $this
+     */
+    public function convert(string $format)
+    {
+        /**
+         * @See https://image.intervention.io/v2/api/encode
+         */
+        if (!in_array($format, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+            throw new \Exception("Unsupported output format: $format");
+        }
+
+        $this->outputFormat = $format;
 
         return $this;
     }
@@ -117,6 +143,25 @@ trait TransformableImage
         return $this;
     }
 
+    /**
+     * Specify the resulting quality.
+     * This only applies to JPG format since PNG compression is lossless.
+     * The value must range from 0 (poor quality, small file) to 100 (best quality, big file).
+     *
+     * @throws \Exception
+     *
+     * @return $this
+     */
+    public function quality(int $quality)
+    {
+        if ($quality < 0 || $quality > 100) {
+            throw new \Exception('The quality must range from 0 to 100.');
+        }
+
+        $this->quality = $quality;
+
+        return $this;
+    }
     /**
      * Specify if the underlying image should be orientated.
      * Rotate the image to the orientation specified in Exif data, if any. Especially useful for smartphones.
@@ -165,12 +210,11 @@ trait TransformableImage
             $this->resizeImage();
         }
 
-        $clientExtension = $uploadedFile->clientExtension();
-        if (!filled($clientExtension)) {
-            $clientExtension = null;
+        if($this->outputFormat) {
+            $this->image = $this->image->encodeByMediaType( 'image/' . $this->outputFormat );
         }
 
-        $this->image->save(null, null, $clientExtension);
+        $this->image->save($uploadedFile->getPathName());
         unset($this->image);
     }
 

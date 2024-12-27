@@ -25,7 +25,15 @@ Install the package into a Laravel application with Nova using Composer:
 composer require ultrasimplified/nova5-image-cropper
 ```
 
-If you want to use Imagick as the default image processing library, follow the [Intervention documentation for Laravel](http://image.intervention.io/getting_started/installation#laravel). This will provide you with a new configuration file where you can specify the driver you want.
+If you want to use Imagick as the default image processing library, follow the [Intervention documentation for Laravel](http://image.intervention.io/getting_started/installation#laravel).
+
+TL;DR: run the following command in the root folder of your site.
+
+```
+php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvider"
+```
+
+This will provide you with a new configuration file (config/image.php) where you can specify your preferred driver.
 
 ## Usage
 
@@ -37,7 +45,7 @@ If you want to use Imagick as the default image processing library, follow the [
 namespace App\Nova;
 
 // ...
-use Ultrasimplifeid\ImageCropper\ImageCropper;
+use Ultrasimplified\ImageCropper\ImageCropper;
 
 class Post extends Resource
 {
@@ -49,31 +57,44 @@ class Post extends Resource
             // ...
 
             // Simple image upload
-            AdvancedImage::make('photo'),
+            ImageCropper::make('photo'),
 
             // Show a cropbox with a free ratio
-            ImageCropper::make('photo')->croppable(),
+            ImageCropper::make('photo')
+                ->croppable(),
 
             // Show a cropbox with a fixed ratio
-            ImageCropper::make('photo')->croppable(16/9),
+            ImageCropper::make('photo')
+                ->croppable(16/9),
 
             // Resize the image to a max width
-            ImageCropper::make('photo')->resize(1920),
+            ImageCropper::make('photo')
+                ->resize(1920),
 
             // Resize the image to a max height
-            ImageCropper::make('photo')->resize(null, 1080),
+            ImageCropper::make('photo')
+                ->resize(null, 1080),
 
             // Show a cropbox and resize the image
-            ImageCropper::make('photo')->croppable()->resize(400, 300),
+            ImageCropper::make('photo')
+                ->croppable()
+                ->resize(400, 300),
 
             // Override the image processing driver for this field only
             ImageCropper::make('photo')->driver('imagick')->croppable(),
 
+            // Convert the file to a different format
+            ImageCropper::make('photo')
+                ->convert('webp')
+
             // Store to AWS S3
-            AdvancedImage::make('photo')->disk('s3'),
+            AdvancedImage::make('photo')
+                ->disk('s3'),
 
             // Specify a custom subdirectory
-            ImageCropper::make('photo')->disk('s3')->path('image'),
+            ImageCropper::make('photo')
+                ->disk('s3')
+                ->path('image'),
         ];
     }
 }
@@ -87,6 +108,7 @@ If you discover any security related issues, please email robin@ultrasimplified.
 
 ## Credits
 
+- [Robin Layfield](https://github.com/ultrasimplified)
 - [Stef Van Esch](https://github.com/stefvanesch)
 - [Marshmallow contributors](https://github.com/marshmallow-packages/nova-advanced-image/graphs/contributors)
 - [Clément Tessier](https://github.com/ctessier/nova-advanced-image-field)
