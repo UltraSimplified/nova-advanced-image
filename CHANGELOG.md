@@ -1,5 +1,5 @@
 # Release Notes
-## [v.2.3.1](https://github.com/ultrasimplified/nova5-image-cropper/compare/2.3.0...v2.3.1)
+## [v.2.3.1](https://github.com/ultrasimplified/nova5-image-cropper/compare/v2.3.0...v2.3.1)
 
 ### Added
 
